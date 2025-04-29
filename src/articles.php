@@ -1,3 +1,9 @@
+<?php
+include 'includes/db.php';
+
+$result = pg_query($conn, "SELECT * FROM articles ORDER BY created_at DESC");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +23,6 @@
     <a href="pages/add_article.php" style="margin-bottom: 20px; display: inline-block; margin-left:20px;">Добавить статью</a>
 
     <?php
-    include 'includes/db.php';
-
-    $result = pg_query($conn, "SELECT * FROM articles ORDER BY created_at DESC");
     while ($row = pg_fetch_assoc($result)) {
        echo "<div class='article'>
                <h2>{$row['title']}</h2>

@@ -1,8 +1,8 @@
 <?php
 include '../includes/db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   $title = pg_escape_string($conn, $_POST['title']);
-   $content = pg_escape_string($conn, $_POST['content']);
+    $title = $_POST['title'];
+    $content = $_POST['content'];
 
    $result = pg_query_params(
        $conn,

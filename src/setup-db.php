@@ -1,8 +1,6 @@
 <?php
 include 'includes/db.php';
 
-pg_query($conn, "DROP TABLE IF EXISTS articles");
-
 $query = <<<SQL
 CREATE TABLE IF NOT EXISTS articles (
    article_id SERIAL PRIMARY KEY,
